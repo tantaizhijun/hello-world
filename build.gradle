@@ -1,7 +1,11 @@
 buildscript {
 	ext {
-		springBootVersion = '2.1.0.RELEASE'
+		springBootVersion = '1.5.2.RELEASE'
 	}
+	//Thymeleaf 和 Thymeleaf Layout Dialect版本
+	ext['thymeleaf.version'] = '3.0.3.RELEASE'
+	ext['thymeleaf-layout-dialect.version'] = '2.2.0'
+
 	repositories {
 		//mavenCentral()
 		maven {
@@ -33,4 +37,8 @@ repositories {
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+	//Thymeleaf依赖
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
 }
