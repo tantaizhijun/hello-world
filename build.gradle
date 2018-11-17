@@ -5,6 +5,9 @@ buildscript {
 	//Thymeleaf 和 Thymeleaf Layout Dialect版本
 	ext['thymeleaf.version'] = '3.0.3.RELEASE'
 	ext['thymeleaf-layout-dialect.version'] = '2.2.0'
+	// 自定义  Hibernate 的版本
+	ext['hibernate.version'] = '5.2.8.Final'
+
 
 	repositories {
 		//mavenCentral()
@@ -33,12 +36,19 @@ repositories {
 	}
 }
 
-
+//依赖库
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 
 	//Thymeleaf依赖
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	// 添加 Spring Data JPA 的依赖
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	// 添加 MySQL连接驱动 的依赖
+	compile('mysql:mysql-connector-java:6.0.5')
+
+	//添加H2依赖,,,,运行时的数据库,,在没有配置数据库的情况下使用
+	runtime('com.h2database:h2:1.4.193')
 
 }
