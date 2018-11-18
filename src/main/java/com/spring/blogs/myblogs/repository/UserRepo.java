@@ -1,36 +1,12 @@
 package com.spring.blogs.myblogs.repository;
 
 import com.spring.blogs.myblogs.domain.User;
-
-import java.util.List;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  * user repository 接口
  */
-public interface UserRepo {
-    /**
-     * 新建或修改用户信息
-     * @param user
-     * @return
-     */
-    User saveOrUpdateUser(User user);
-
-    /**
-     * 删除用户byId
-     * @param id
-     */
-    void deleteUser(Long id);
-
-    /**
-     * 获取用户ByID
-     * @param id
-     * @return
-     */
-    User getUserById(Long id);
-
-    /**
-     * 获取用户列表
-     * @return
-     */
-    List<User> getUserList();
+public interface UserRepo extends CrudRepository<User,Long> {
+   //自定义的接口就不需要了,,Spring data JPA提供了
+    //实现类也不需要了(删了),Spring data JPA提供了
 }
