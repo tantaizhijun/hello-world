@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-    <meta charset="UTF-8">
-    <title>list</title>
-</head>
+<header th:replace="~{fragment/header::header}"></header>
 <body>
-    <div th:replace="~{fragment/header::header}">
-        头
-    </div>
     <h3 th:text="${userModel.title}"></h3>
     <a href="/user/form.html" th:href="@{/user/form}">新建</a>
     <table>
